@@ -120,6 +120,8 @@ if ([string]::IsNullOrWhiteSpace($token)) {
     throw "Set DEPGUARD_CI_TOKEN environment variable before running without DryRun."
 }
 
+Add-Type -AssemblyName System.Net.Http
+
 $handler = New-Object System.Net.Http.HttpClientHandler
 $client = New-Object System.Net.Http.HttpClient($handler)
 
